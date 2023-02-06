@@ -4,21 +4,18 @@ import CardContent from './CardContent';
 const data = [
   {
     image: '/images/shop01.png.webp',
-    title: 'haale luiaa',
-    description: 'ajhdiq',
-    button: 'shop',
+    title: 'Laptop Collection',
+    button: 'SHOP NOW',
   },
   {
     image: '/images/shop02.png.webp',
-    title: 'haale luiaa',
-    description: 'ajhdiq',
-    button: 'shop',
+    title: 'Cameras Collection',
+    button: 'SHOP NOW',
   },
   {
     image: '/images/shop03.png.webp',
-    title: 'haale luiaa',
-    description: 'ajhdiq',
-    button: 'shop',
+    title: 'Accessories Collection',
+    button: 'SHOP NOW',
   },
 ];
 const Collection = () => {
@@ -30,7 +27,7 @@ const Collection = () => {
             key={item.id}
             image={item.image}
             title={item.title}
-            description={item.description}
+            button={item.button}
           ></CardContent>
         ))}
       </div>
