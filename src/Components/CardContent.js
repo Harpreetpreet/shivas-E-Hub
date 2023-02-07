@@ -3,7 +3,7 @@ import React from 'react';
 
 const CardContent = ({ image, title, description, button }) => {
   return (
-    <div className="md:mt-40 md:10">
+    <div className="container mx-auto p-8">
       <div className="rounded-lg shadow-lg bg-slate-300 py-10">
         <div className="flex justify-center">
           <a href="#!">
