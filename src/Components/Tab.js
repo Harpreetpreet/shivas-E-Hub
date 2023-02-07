@@ -1,8 +1,30 @@
 import { useState } from 'react';
+const TabItem = [
+  {
+    label: 'HOME',
+    content: 'lksfnh',
+    text: 'home',
+  },
+  {
+    label: 'PROFILE',
+    content: 'lksfnh',
+    text: 'profile',
+  },
+  {
+    label: 'MESSAGES',
+    content: 'lksfnh',
+    text: 'messages',
+  },
+  {
+    label: 'CONTACT',
+    content: 'lksfnh',
+    text: 'contact',
+  },
+];
 
 const Tab = () => {
   const [isActive, setIsActive] = useState('home');
-  console.log('isActive', isActive);
+
   return (
     <div>
       <ul
@@ -10,10 +32,11 @@ const Tab = () => {
         id="tabs-tab"
         role="tablist"
       >
-        <li className="nav-item" role="presentation">
-          <a
-            href="#tabs-home"
-            className="
+        {TabItem.map((item) => (
+          <li key={item.id} className="nav-item" role="presentation">
+            <a
+              href="#tabs-home"
+              className={`
       nav-link
       block
       font-medium
@@ -25,82 +48,18 @@ const Tab = () => {
       py-3
       my-2
       hover:border-transparent hover:bg-gray-100
-      focus:border-transparent
-      active
-    "
-            active={isActive === 'home'}
-            onClick={() => setIsActive('home')}
-          >
-            Home
-          </a>
-        </li>
-        <li className="nav-item" role="presentation">
-          <button
-            active={isActive === 'profile'}
-            onClick={() => setIsActive('profile')}
-            className="
-      nav-link
-      block
-      font-medium
-      text-xs
-      leading-tight
-      uppercase
-      border-x-0 border-t-0 border-b-2 border-transparent
-      px-6
-      py-3
-      my-2
-      hover:border-transparent hover:bg-gray-100
-      focus:border-transparent
-    "
-          >
-            Profile
-          </button>
-        </li>
-        <li className="nav-item" role="presentation">
-          <button
-            active={isActive === 'messages'}
-            onClick={() => setIsActive('messages')}
-            className="
-      nav-link
-      block
-      font-medium
-      text-xs
-      leading-tight
-      uppercase
-      border-x-0 border-t-0 border-b-2 border-transparent
-      px-6
-      py-3
-      my-2
-      hover:border-transparent hover:bg-gray-100
-      focus:border-transparent
-    "
-          >
-            Messages
-          </button>
-        </li>
-        <li className="nav-item" role="presentation">
-          <buttton
-            active={isActive === 'contact'}
-            onClick={() => setIsActive('contact')}
-            className="
-      nav-link
+      focus:border-transparent ${
+        isActive === item.text ? 'active' : 'border-transparent'
+      }
 
-      block
-      font-medium
-      text-xs
-      leading-tight
-      uppercase
-      border-x-0 border-t-0 border-b-2 border-transparent
-      px-6
-      py-3
-      my-2
-      hover:border-transparent hover:bg-gray-100
-      focus:border-transparent
-    "
-          >
-            Contact
-          </buttton>
-        </li>
+    `}
+              active={isActive === item.text}
+              onClick={() => setIsActive(item.text)}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
       </ul>
       <div>
         {isActive === 'home' && <div className="">Tab 1 content home</div>}
