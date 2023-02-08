@@ -1,45 +1,98 @@
-import { useState } from 'react';
-const TabItem = [
+import { useState, useEffect } from 'react';
+import ProductCards from './NewProducts/ProductCards';
+const categories = [
   {
-    label: 'HOME',
-    content: 'lksfnh',
-    text: 'home',
+    label: 'All',
+    value: 'all',
   },
   {
-    label: 'PROFILE',
-    content: 'lksfnh',
-    text: 'profile',
+    label: 'Laptop',
+    value: 'laptop',
   },
   {
-    label: 'MESSAGES',
-    content: 'lksfnh',
-    text: 'messages',
+    label: 'Tab',
+    value: 'tab',
   },
   {
-    label: 'CONTACT',
-    content: 'lksfnh',
-    text: 'contact',
+    label: 'Headphone',
+    value: 'headphone',
+  },
+];
+
+const products = [
+  {
+    image: '/images/product01.png.webp',
+    title: 'visit here',
+    description: 'kajgd',
+    category: 'laptop',
+  },
+  {
+    image: '/images/product02.png.webp',
+    title: 'visit here',
+    description: 'kajgd',
+    category: 'laptop',
+  },
+  {
+    image: '/images/product03.png.webp',
+    title: 'visit here',
+    description: 'kajgd',
+    category: 'laptop',
+  },
+  {
+    image: '/images/product04.png.webp',
+    title: 'visit here',
+    description: 'kajgd',
+    category: 'tab',
+  },
+  {
+    image: '/images/product03.png.webp',
+    title: 'visit here',
+    description: 'kajgd',
+    category: 'tab',
+  },
+  {
+    image: '/images/product04.png.webp',
+    title: 'visit here',
+    description: 'kajgd',
+    category: 'headphone',
   },
 ];
 
 const Tab = () => {
-  const [isActive, setIsActive] = useState('home');
+  const [category, setCategory] = useState('all');
+  const [productsList, setProductsList] = useState(products);
+
+  useEffect(() => {
+    if (category && category === 'all') {
+      setProductsList(products);
+    } else {
+      setProductsList(
+        products.filter((product) => product.category === category),
+      );
+    }
+  }, [category]);
 
   return (
-    <div>
-      <ul
-        className="nav nav-tabs flex flex-col md:flex-row flex-wrap list-none border-b-0 pl-0 mb-4"
-        id="tabs-tab"
-        role="tablist"
-      >
-        {TabItem.map((item) => (
-          <li key={item.id} className="nav-item" role="presentation">
-            <a
-              href="#tabs-home"
-              className={`
+    <div className="container mx-auto p-8">
+      <div className="flex justify-between ">
+        <h1
+          className="text-2xl font-bold
+        "
+        >
+          NEW PRODUCTS
+        </h1>
+        <ul
+          className="nav nav-tabs flex flex-col md:flex-row flex-wrap list-none border-b-0 pl-0 mb-4 "
+          id="tabs-tab"
+          role="tablist"
+        >
+          {categories.map((item) => (
+            <li key={item.id} className="nav-item" role="presentation">
+              <button
+                className={`
       nav-link
       block
-      font-medium
+      font-bold
       text-xs
       leading-tight
       uppercase
@@ -47,25 +100,26 @@ const Tab = () => {
       px-6
       py-3
       my-2
-      hover:border-transparent hover:bg-gray-100
+      hover:border-transparent hover:text-red-700
       focus:border-transparent ${
-        isActive === item.text ? 'active' : 'border-transparent'
+        category === item.value ? 'active' : 'border-transparent '
       }
-
     `}
-              active={isActive === item.text}
-              onClick={() => setIsActive(item.text)}
-            >
-              {item.label}
-            </a>
-          </li>
-        ))}
-      </ul>
+                active={category === item.value}
+                onClick={() => setCategory(item.value)}
+              >
+                {item.label}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
       <div>
-        {isActive === 'home' && <div className="">Tab 1 content home</div>}
-        {isActive === 'profile' && <div>Tab 2 content</div>}
-        {isActive === 'messages' && <div>Tab 3 content</div>}
-        {isActive === 'contact' && <div>Tab 4 content</div>}
+        <div className="grid grid-cols-4 gap-4 ">
+          {productsList.map((data1) => (
+            <ProductCards key={data1.id} product={data1} />
+          ))}
+        </div>
       </div>
     </div>
   );
