@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import ProductCards from './NewProducts/ProductCards';
+import { products } from '../utils/products';
 const categories = [
   {
     label: 'All',
@@ -18,46 +19,6 @@ const categories = [
     value: 'headphone',
   },
 ];
-
-const products = [
-  {
-    image: '/images/product01.png.webp',
-    title: 'visit here',
-    description: 'kajgd',
-    category: 'laptop',
-  },
-  {
-    image: '/images/product02.png.webp',
-    title: 'visit here',
-    description: 'kajgd',
-    category: 'laptop',
-  },
-  {
-    image: '/images/product03.png.webp',
-    title: 'visit here',
-    description: 'kajgd',
-    category: 'laptop',
-  },
-  {
-    image: '/images/product04.png.webp',
-    title: 'visit here',
-    description: 'kajgd',
-    category: 'tab',
-  },
-  {
-    image: '/images/product03.png.webp',
-    title: 'visit here',
-    description: 'kajgd',
-    category: 'tab',
-  },
-  {
-    image: '/images/product04.png.webp',
-    title: 'visit here',
-    description: 'kajgd',
-    category: 'headphone',
-  },
-];
-
 const Tab = () => {
   const [category, setCategory] = useState('all');
   const [productsList, setProductsList] = useState(products);
@@ -115,7 +76,7 @@ const Tab = () => {
         </ul>
       </div>
       <div>
-        <div className="grid grid-cols-4 gap-4 ">
+        <div className="grid grid-cols-5 gap-4 ">
           {productsList.map((data1) => (
             <ProductCards key={data1.id} product={data1} />
           ))}

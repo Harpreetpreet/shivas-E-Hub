@@ -20,8 +20,8 @@ const data = [
 ];
 const Collection = () => {
   return (
-    <div className="container mx-auto">
-      <div className="grid md:grid-cols-3 grid-cols-1 gap-4">
+    <div className="container mx-auto ">
+      <div className=" grid md:grid-cols-3 grid-cols-1 gap-4">
         {data.map((item) => (
           <CardContent
             key={item.id}

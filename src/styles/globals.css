@@ -108,3 +108,16 @@ a {
     color-scheme: dark;
   }
 }
+
+.riband {
+  position: absolute;
+    top: -30%;
+    right: 0;
+    left: -23%;
+    bottom: 0;
+    width: 100%;
+    height: 105%;
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}

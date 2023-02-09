@@ -5,15 +5,17 @@ const ProductCards = ({ product }) => {
   return (
     <div className="container mx-auto">
       <div className="flex justify-center ">
-        <div className="rounded-lg shadow-lg bg-white max-w-sm">
-          <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-            <Image
-              src={product.image}
-              alt="Picture of the author"
-              width={500}
-              height={500}
-            />
-          </a>
+        <div className="rounded-lg shadow-lg bg-white ">
+          <div className="max-h-[240px]">
+            <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
+              <Image
+                src={product.image}
+                alt="Picture of the author"
+                width={500}
+                height={500}
+              />
+            </a>
+          </div>
           <div className="p-6">
             <h5 className="text-gray-900 text-xl font-medium mb-2">
               {product.title}
