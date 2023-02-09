@@ -3,10 +3,10 @@ import React from 'react';
 
 const CardContent = ({ image, title, description, button }) => {
   return (
-    <div className="shadow overflow-hidden mt-12 ">
-      <div className="relative">
+    <div className="group shadow overflow-hidden mt-12 ">
+      <div className="relative ">
         <Image
-          className="rounded-t-lg items-center bg-transparent "
+          className="rounded-t-lg items-center bg-transparent max-w-xs group-hover:scale-110 transition duration-300 ease-in-out"
           src={image}
           alt=""
           height={350}
