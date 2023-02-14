@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <section className=" bg-black">
       <div className="container mx-auto px-10">
-        <div class="grid grid-cols-4 gap-4  ">
+        <div className="grid grid-cols-4 gap-4  ">
           <div className="space-y-4 text-white">
             <h1 className="font-bold">ABOUT US</h1>
             <ul>

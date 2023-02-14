@@ -3,18 +3,22 @@ import ProductCards from './NewProducts/ProductCards';
 import { products } from '../utils/products';
 const categories = [
   {
+    id: 1,
     label: 'All',
     value: 'all',
   },
   {
+    id: 2,
     label: 'Laptop',
     value: 'laptop',
   },
   {
+    id: 3,
     label: 'Tab',
     value: 'tab',
   },
   {
+    id: 4,
     label: 'Headphone',
     value: 'headphone',
   },
@@ -35,7 +39,7 @@ const Tab = () => {
 
   return (
     <div className="container mx-auto p-8">
-      <div className="flex justify-between ">
+      <div className="flex justify-between items-center ">
         <h1
           className="text-2xl font-bold
         "

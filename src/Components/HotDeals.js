@@ -5,7 +5,7 @@ const HotDeals = () => {
   return (
     <section className="bg-slate-300 py-10">
       <div className="container mx-auto ">
-        <div class="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-3 gap-4">
           <div>
             <Image
               src="/images/asusLaptop.png"

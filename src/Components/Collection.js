@@ -3,16 +3,19 @@ import CardContent from './CardContent';
 
 const data = [
   {
+    id: 1,
     image: '/images/shop01.png.webp',
     title: 'Laptop Collection',
     button: 'SHOP NOW',
   },
   {
+    id: 2,
     image: '/images/shop02.png.webp',
     title: 'Cameras Collection',
     button: 'SHOP NOW',
   },
   {
+    id: 3,
     image: '/images/shop03.png.webp',
     title: 'Accessories Collection',
     button: 'SHOP NOW',
@@ -28,7 +31,7 @@ const Collection = () => {
             image={item.image}
             title={item.title}
             button={item.button}
-          ></CardContent>
+          />
         ))}
       </div>
     </div>
